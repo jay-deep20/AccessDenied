@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detector</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-image: url('image1.jpeg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: rgba(128, 128, 128, 0.95); /* Changed to grey */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
+            width: 100%;
+        }
+        .title {
+            color: #2e7d32;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        p {
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        .btn {
+            border: 2px solid #2e7d32;
+            color: white;
+            background-color: #2e7d32;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #388e3c; /* Changed hover color for Select Image button */
+            transform: scale(1.05);
+        }
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+        .analyze-button {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+        }
+        .analyze-button:hover {
+            background-color: #8e24aa; /* Changed hover color for Analyze button */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Plant Disease Detector</h1>
+        <p>Share a picture of a plant!</p>
+        <div class="upload-btn-wrapper">
+            <button class="btn">Select Image</button>
+            <input type="file" id="imageUpload" accept="image/*">
+        </div>
+        <button class="analyze-button" id="analyzeButton">Analyze</button>
+    </div>
+    <script>
+        document.getElementById('analyzeButton').addEventListener('click', function() {
+            const fileInput = document.getElementById('imageUpload');
+            if (fileInput.files.length === 0) {
+                alert('Please select an image first.');
+            } else {
+                // Add your image analysis code here
+                alert('Analyzing the image...');
+            }
+        });
+    </script>
+</body>
+</html>
